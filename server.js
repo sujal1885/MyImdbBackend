@@ -1,11 +1,12 @@
 const express = require('express');
 const movieuser = require('./routes/movieuser');
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const app = express();
 
 mongoose
-.connect('mongodb://127.0.0.1:27017/Imdbdatabase',{
+.connect(process.env.MONGO_URI,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 })

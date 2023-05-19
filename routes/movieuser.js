@@ -11,6 +11,10 @@ const secretKey = 'sujalbhaiya';
 router.use(cors());
 router.use(express.json());
 
+router.get('/',function(req,res){
+  res.send('Hello world');
+});
+
 router.post('/register',async function(req,res){
     console.log(req.body);
     const name = req.body.name;

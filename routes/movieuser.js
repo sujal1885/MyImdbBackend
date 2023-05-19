@@ -65,7 +65,7 @@ router.post('/ratemovie',async function(req,res){
     } else{
       if(existingMovieIndex==-1){
         let freq = movie.frequency;
-        let avg = (movie.rating+movierating)/(freq+1);
+        let avg = (movie.rating*freq+movierating)/(freq+1);
         movie.rating = avg;
         movie.frequency = freq+1;
         await movie.save();
